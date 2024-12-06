@@ -1,0 +1,59 @@
+/* Contenedor principal */
+.contenedor-publicaciones {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* Estilo individual para publicaciones */
+.publicacion {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.publicacion:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Títulos de publicaciones */
+.titulo-publicacion {
+    font-family: 'Lora', serif;
+    font-size: 1.5rem;
+    color: #343a40;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.publicacion:hover .titulo-publicacion {
+    color: #007bff;
+}
+
+/* Contenido de las publicaciones */
+.contenido-publicacion {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    color: #6c757d;
+    line-height: 1.5;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .contenedor-publicaciones {
+        padding: 15px;
+    }
+
+    .titulo-publicacion {
+        font-size: 1.25rem;
+    }
+
+    .contenido-publicacion {
+        font-size: 0.9rem;
+    }
+}

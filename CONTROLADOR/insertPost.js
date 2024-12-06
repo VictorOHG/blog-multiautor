@@ -31,8 +31,15 @@ document.getElementById("crearPublicacion").addEventListener("submit", async fun
 function agregarPublicacion(postId, titulo, contenido, createdAt) {
     const contenedorPublicaciones = document.querySelector("#contenedorPublicaciones");
 
-    // Formatea la fecha en un formato legible
-    const fechaPublicacion = new Date(createdAt).toLocaleString();
+    let fechaPublicacion = "Fecha no disponible";
+    if (createdAt) {
+        const parsedDate = new Date(createdAt);
+        if (!isNaN(parsedDate.getTime())) {
+            fechaPublicacion = parsedDate.toLocaleString();
+        } else {
+            console.error("Fecha inválida al formatear:", createdAt);
+        }
+    }
 
     const publicacionHTML = `
         <div class="post-preview" data-post-id="${postId}">
@@ -44,8 +51,9 @@ function agregarPublicacion(postId, titulo, contenido, createdAt) {
         </div>
         <hr class="my-4" />
     `;
-    contenedorPublicaciones.insertAdjacentHTML("beforeend", publicacionHTML);
+    contenedorPublicaciones.insertAdjacentHTML("afterbegin", publicacionHTML);
 }
+
 
 // **Cargar publicaciones existentes**
 document.addEventListener("DOMContentLoaded", async function () {
@@ -54,7 +62,13 @@ document.addEventListener("DOMContentLoaded", async function () {
         const result = await response.json();
 
         if (result.success && Array.isArray(result.data)) {
-            result.data.forEach((publicacion) => {
+            // Ordenar las publicaciones por fecha de más reciente a más antigua
+            const publicacionesOrdenadas = result.data.sort(
+                (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+            );
+
+            // Agregar publicaciones al DOM
+            publicacionesOrdenadas.forEach((publicacion) => {
                 const { postId, titulo, contenido, createdAt } = publicacion;
                 agregarPublicacion(postId, titulo, contenido, createdAt);
             });

@@ -1,0 +1,63 @@
+/* Estilos para el encabezado */
+.masthead {
+    background-size: cover;
+    background-position: center;
+    padding: 80px 0;
+    color: white;
+    text-align: center;
+}
+
+.masthead .page-heading {
+    margin-bottom: 30px;
+}
+
+.masthead h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.masthead .subheading {
+    font-size: 1.25rem;
+    color: #f8f9fa;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+.masthead .subheading:hover {
+    color: #007bff;
+}
+
+
+/* Estilos para el contenedor */
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.col-md-10, .col-lg-8, .col-xl-7 {
+    flex: 1;
+    max-width: 100%;
+    padding: 15px;
+}
+
+/* Adaptar el tamaño de las fuentes en dispositivos pequeños */
+@media (max-width: 768px) {
+    .masthead h1 {
+        font-size: 2rem;
+    }
+
+    .masthead .subheading {
+        font-size: 1rem;
+    }
+}

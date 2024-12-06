@@ -1,0 +1,62 @@
+/* Estilo para el contenedor de publicaciones */
+#contenedorPublicaciones {
+    margin-top: 2rem;
+}
+
+#contenedorPublicaciones .post-preview {
+    background-color: #f9f9f9; /* Fondo claro */
+    border: 1px solid #ddd; /* Borde sutil */
+    border-radius: 8px; /* Esquinas redondeadas */
+    padding: 1.5rem; /* Espaciado interno */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+    margin-bottom: 2rem; /* Espaciado entre publicaciones */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación al pasar el cursor */
+}
+
+#contenedorPublicaciones .post-preview:hover {
+    transform: translateY(-5px); /* Efecto de elevación */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Sombra más fuerte al pasar el cursor */
+}
+
+#contenedorPublicaciones .post-title {
+    font-size: 1.8rem; /* Tamaño del título */
+    font-weight: bold;
+    color: #333; /* Color oscuro */
+    margin-bottom: 0.5rem;
+}
+
+#contenedorPublicaciones .post-subtitle {
+    font-size: 1.2rem; /* Tamaño del subtítulo */
+    color: #555; /* Color gris oscuro */
+    margin-bottom: 1rem;
+}
+
+#contenedorPublicaciones .post-meta {
+    font-size: 0.9rem; /* Tamaño del texto meta */
+    color: #999; /* Color gris claro */
+    margin-bottom: 1rem;
+}
+
+#contenedorPublicaciones .btn-comentar {
+    background-color: #007bff; /* Azul Bootstrap */
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contenedorPublicaciones .btn-comentar:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el cursor */
+}
+
+#contenedorPublicaciones .comentarios-contenedor {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+    font-size: 0.9rem;
+    color: #666;
+}
+

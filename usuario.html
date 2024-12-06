@@ -14,6 +14,9 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
 
         <link href="VISTA/css/styles.css" rel="stylesheet" />
+        <link href="VISTA/css/usuarios.css" rel="stylesheet" />
+        <link href="VISTA/css/contenedor.css" rel="stylesheet" />
+        <link href="VISTA/css/apigato.css" rel="stylesheet" />
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
@@ -28,6 +31,7 @@
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="usuario.html">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="VISTA/usuario/aboutUser.html">Acerca de</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Cerrar sesión</a></li>
                     </ul>
                 </div>
             </div>
@@ -47,8 +51,9 @@
         </header>
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
+                <!-- Formulario para crear publicaciones -->
                 <div class="col-md-10 col-lg-8 col-xl-7">
-                    <div class="mb-5">
+                    <div class="formulario-publicacion">
                         <h2 class="text-center">Crear una Nueva Publicación</h2>
                         <form id="crearPublicacion" method="POST">
                             <div class="mb-3">
@@ -59,20 +64,30 @@
                                 <label for="contenido" class="form-label">Contenido</label>
                                 <textarea class="form-control" id="contenido" name="contenido" rows="5" placeholder="Escribe el contenido" required></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary">Publicar</button>
+                            <button type="submit" class="btn btn-primary text-uppercase">Publicar</button>
                         </form>
                     </div>
-                    <div id="contenedorPublicaciones">
+                </div>
+
+                <!-- Imagen Aleatoria de Gato -->
+                <div class="col-md-8">
+                    <div class="cat-section text-center">
+                        <h2 class="section-title">Imagen Aleatoria de Gato</h2>
+                        <button id="getCat" class="btn btn-primary">Obtener Imagen</button>
+                        <div id="catContainer" class="mt-4">
+                            <!-- Imagen aleatoria del gato aparecerá aquí -->
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-10 col-lg-8 col-xl-7 mb-5">
-                    <h2 class="text-center">Imagen Aleatoria de Gato</h2>
-                    <button id="getCat" class="btn btn-primary">Obtener Imagen</button>
-                    <div id="catContainer" class="mt-3 text-center">
-                    </div>
+
+                <!-- Contenedor de Publicaciones -->
+                <div id="contenedorPublicaciones" class="col-md-10 col-lg-8 col-xl-7">
+                    <!-- Las publicaciones dinámicas se cargarán aquí -->
                 </div>
+        
             </div>
         </div>
+        
         <footer class="border-top">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
