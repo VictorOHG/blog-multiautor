@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt');
-const { getConnection } = require('../../../config/database');
+const { getConnection } = require('../config/database');
 
 async function getUsuarios() {
     try {

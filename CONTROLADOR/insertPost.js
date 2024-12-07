@@ -6,7 +6,7 @@ document.getElementById("crearPublicacion").addEventListener("submit", async fun
     const contenido = document.getElementById("contenido").value;
 
     try {
-        const response = await fetch("http://localhost:3000/publis/postPosts", {
+        const response = await fetch("http://localhost:3001/publis/postPosts", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ titulo, contenido }),

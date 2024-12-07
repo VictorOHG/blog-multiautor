@@ -11,7 +11,7 @@ document.getElementById("registrarUsuario").addEventListener("submit", async fun
 
     try {
         // Enviar los datos al backend
-        const response = await fetch("http://localhost:3000/users/postUsers", {
+        const response = await fetch("http://localhost:3002/users/postUsers", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
